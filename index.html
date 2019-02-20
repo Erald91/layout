@@ -5,10 +5,59 @@
     <title>Layout - HTML/CSS</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/container.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <p class="temp-paragraph">Layout App</p>
+        <div class="main">
+            <div class="first-div"> 
+                <div id="title"><h2>TITLES</h2></div>
+                <div class="search">
+                    <input id="searchbox" type="text" placeholder="Search by Title,ID, Studio or Release Year" ></p> 
+                    <p><input id="titlebox" type="submit" value="ADD TITLE"></p>
+                </div>
+                    
+            </div>
+                <div class="second-div">
+                    <table class="table">
+                        <tr class="header">
+                            <th >ID</th>
+                            <th>NAME</th>
+                            <th>RELEASE</th>
+                            <th>TYPE</th>
+                            <th>PROVIDER</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                        <tr class="body">
+                            <td>T1506908900</td>
+                            <td>Ariel</td>
+                            <td>1999</td>
+                            <td>Feature</td>
+                            <td>Disney</td>
+                            <td>sadf</td>
+                        </tr>
+                        <tr class="body">
+                            <td>T1508584395</td>
+                            <td>Another</td>
+                            <td>1994</td>
+                            <td>Series</td>
+                            <td>ACME</td>
+                            <td>sadf</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+      
+        <div class="sidebar">
+            <div><a><img src="../images/cameraicon.png"></a></div>
+            <div><a><img src="../images/BoxIcon1.png"></a></div>
+            <div><a><img src="../images/managementicon.png"></a></div>
+            <div><a><img src="../images/settingicon.png"></a></div>
+            <div><a><img src="../images/videoicon.png"></a></div>
+        </div> 
     </div>
+
+
+    
   </body>
 </html>
