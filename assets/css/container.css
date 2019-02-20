@@ -1,73 +1,78 @@
 .container {      
-    height: 100vh;
-    background: #1b1e24;
-    display: flex;          
-    }
-.main{
-    flex: 10;
-    order:2;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  background: #1b1e24;
+  display: flex;          
 }
 
-.first-div {
-    display: flex;
-} 
-.first-div .search{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    padding-top:10px;
-}
-.first-div #title {
-   color: #ffffff;
-   flex: 3;
-}
-.search #searchbox{
-    border-color:#999fa8;
-    color: #999fa8;
-    background-color: #1b1e24;
-    flex: 1;   
-                      
-}
-.search #titlebox {
-    color:#235d9b;
-    border-color: #235d9b;
-    background-color: #1b1e24;
-    flex: 1;
-    float: right;
-    
-}
-.header {
-    background-color: #999fa8;
-    font-family: 'Roboto', sans-serif;           
-}
-.table {
-    color:#ffffff;
-    width:100%;
-}
-.table th {
-    border-top: 1px solid white;
+.main {
+  flex: 10;
+  order:2;
+  display: flex;
+  flex-direction: column;
 }
 
-.second-div {
-    flex:1;
-    width:100%;
+.main .first-div {
+  display: flex;
+}
+
+.main .first-div .search {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  padding-top:10px;
+}
+
+.main .first-div #title {
+  color: #ffffff;
+  flex: 3;
+}
+
+.main .first-div .search #searchbox{
+  border-color:#999fa8;
+  color: #999fa8;
+  background-color: #1b1e24;
+  flex: 1;            
+}
+
+.main .first-div .search #titlebox {
+  color:#235d9b;
+  border-color: #235d9b;
+  background-color: #1b1e24;
+  flex: 1;
+  float: right;
+}
+
+.main .second-div {
+  flex:1;
+  width:100%;
+}
+
+.main .second-div .table {
+  color:#ffffff;
+  width:100%;
+}
+
+.main .second-div .table .header {
+  background-color: #999fa8;
+  font-family: 'Roboto', sans-serif;           
+}
+
+.main .second-div .table th {
+  border-top: 1px solid white;
 }
 
 .sidebar {
-    height: 100%;
-    flex:1;
-    order:1;
-    background-color: #1b1e24;
-    
-   
-    
+  height: 100%;
+  flex:1;
+  order:1;
+  background-color: #1b1e24;
 }
+
 .sidebar div {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 .sidebar a {    
-    display: block;
+  display: block;
 }
