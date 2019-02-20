@@ -54,7 +54,7 @@
 
 .main .second-div .table .header {
   background-color: #999fa8;
-  font-family: 'Roboto', sans-serif;           
+  font-family: 'Roboto', sans-serif;         
 }
 
 .main .second-div .table th {
@@ -65,13 +65,39 @@
   height: 100%;
   background-color: #1b1e24;
   width: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #2b3441;
 }
 
-.sidebar div {
+.sidebar div.item {
   margin: 0;
   padding: 0;
+  cursor: pointer;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.sidebar a {    
-  display: block;
+.sidebar div.item:hover:not(.logo) {
+  background: #242736;
+}
+
+.sidebar div.item img {
+  width: 35px;
+  height: 35px;
+}
+
+.sidebar div.item.logo {
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar div.item.logo img {
+  width: 65px;
+  height: 65px;
 }
