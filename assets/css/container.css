@@ -45,7 +45,11 @@ body {
   color: #999fa8;
   background-color: #1b1e24;
   width: 300px;
-  padding: 7px;             
+  padding: 7px; 
+  outline: none;
+  border: 1px solid #999fa8;
+  border-radius: 2px;      
+  font-family: 'Roboto', sans-serif;      
 }
 
 .main .first-div .search #titlebox {
