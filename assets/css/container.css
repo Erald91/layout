@@ -99,7 +99,13 @@ body {
   color: #235d9b; 
   font-family: 'Roboto', sans-serif; 
   border: 1px solid #235d9b;
-  border-radius: 2px;    
+  border-radius: 2px;   
+  cursor: pointer; 
+  outline: none;
+}
+.main .actions .add-button:hover {
+  border: 1px solid #60a2e9;
+  color:#60a2e9;
 }
 
 .sidebar {
