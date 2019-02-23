@@ -24,23 +24,27 @@ body {
 }
 
 .main .first-div .search {
-  flex:1;
+  width: 50%;
   display: flex;
-  flex-direction: column;
   padding-top:10px;
+  justify-content: flex-end;
 }
 
 .main .first-div #title {
   color: #ffffff;
-  flex: 1;
+  width: 50%;
   font-family: 'Roboto', sans-serif;
+  
+}
+.main .first-div #title h2 {
+  margin: 0px;
 }
 
 .main .first-div .search #searchbox{
   border-color:#999fa8;
   color: #999fa8;
   background-color: #1b1e24;
-  flex: 1;
+  width: 300px;
   padding: 7px;             
 }
 
