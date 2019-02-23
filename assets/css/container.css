@@ -33,6 +33,7 @@ body {
 .main .first-div #title {
   color: #ffffff;
   flex: 1;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main .first-div .search #searchbox{
