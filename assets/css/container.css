@@ -88,6 +88,19 @@ body {
 .main .second-div .table th {
   border-bottom: 1px solid #999fa8;
 }
+.main .actions{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+}
+.main .actions .add-button {
+  background: transparent;
+  padding: 6px 13px;
+  color: #235d9b; 
+  font-family: 'Roboto', sans-serif; 
+  border: 1px solid #235d9b;
+  border-radius: 2px;    
+}
 
 .sidebar {
   height: 100%;
