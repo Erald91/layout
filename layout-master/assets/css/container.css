@@ -1,11 +1,7 @@
-body {
-  margin: 0px;
-}
 .container {      
   height: 100vh;
   background: #1b1e24;
-  display: flex;  
-        
+  display: flex;         
 }
 
 .main {
@@ -13,14 +9,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-left: 70px;
-  padding-top: 20px;
-  padding-right: 70px;
 }
 
 .main .first-div {
   display: flex;
-  width:100%;
 }
 
 .main .first-div .search {
@@ -32,15 +24,14 @@ body {
 
 .main .first-div #title {
   color: #ffffff;
-  flex: 1;
+  flex: 3;
 }
 
 .main .first-div .search #searchbox{
   border-color:#999fa8;
   color: #999fa8;
   background-color: #1b1e24;
-  flex: 1;
-  padding: 7px;             
+  flex: 1;            
 }
 
 .main .first-div .search #titlebox {
@@ -49,39 +40,25 @@ body {
   background-color: #1b1e24;
   flex: 1;
   float: right;
-  padding: 7px;
 }
 
 .main .second-div {
   flex:1;
   width:100%;
-  margin-top: 20px;
 }
 
 .main .second-div .table {
   color:#ffffff;
   width:100%;
-  border-bottom: 1px solid #999fa8;
-  border-spacing: 0px;
-  text-align: center;
 }
 
 .main .second-div .table .header {
-  background-color: #2b3441;
-  font-family: 'Roboto', sans-serif;       
-}
-
-.main .second-div .table .header th {
-  padding:10px;        
-}
-
-.main .second-div .table .body td {
-  border-top: 1px solid #999fa8;
-  padding: 10px;
+  background-color: #999fa8;
+  font-family: 'Roboto', sans-serif;         
 }
 
 .main .second-div .table th {
-  border-bottom: 1px solid #999fa8;
+  border-top: 1px solid white;
 }
 
 .sidebar {
@@ -123,7 +100,4 @@ body {
 .sidebar div.item.logo img {
   width: 65px;
   height: 65px;
-}
-.font-color{
-  color: #235d9b;
 }
