@@ -1,7 +1,7 @@
 body {
   margin: 0px;
 }
-.container {      
+.custom-container {      
   height: 100vh;
   background: #1b1e24;
   display: flex;  
@@ -86,6 +86,11 @@ body {
 .main .second-div .table .body td {
   border-top: 1px solid #999fa8;
   padding: 10px;
+}
+
+.main .second-div .table .body td.custom-actions > i {
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .main .second-div .table th {
