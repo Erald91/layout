@@ -26,7 +26,6 @@ body {
 .main .first-div .search {
   width: 50%;
   display: flex;
-  padding-top:10px;
   justify-content: flex-end;
 }
 

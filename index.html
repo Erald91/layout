@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Layout - HTML/CSS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/container.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -40,7 +41,7 @@
           
         </div>
         <div class="actions">  
-            <button class="add-button" id="addTitleButton">ADD TITLE</button>
+            <button class="add-button" id="addTitleButton" data-toggle="modal" data-target="#myModal">ADD TITLE</button>
         </div>
         <div class="second-div">
             <table class="table">
@@ -55,149 +56,54 @@
                   </tr>
                 </thead>
                 <tbody id="tableBody">
-                  <!-- <tr class="body">
-                      <td>T1506908900</td>
-                      <td>Ariel</td>
-                      <td>1999</td>
-                      <td>Feature</td>
-                      <td>Disney</td>
-                      <td><i class="fas fa-edit font-color"></i> <i class="fas fa-link font-color"></i></td>
-                  </tr>
-                  <tr class="body">
-                      <td>T1508584395</td>
-                      <td>Another</td>
-                      <td>1994</td>
-                      <td>Series</td>
-                      <td>ACME</td>
-                      <td><i class="fas fa-edit font-color"></i> <i class="fas fa-link font-color"></i></td>
-                  </tr> -->
                 </tbody>
             </table>
+            
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="usr">ID:</label>
+                  <input type="text" class="form-control" id="ID">
+                </div>
+                <div class="form-group">
+                  <label for="usr">Name:</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="usr">Release:</label>
+                  <input type="text" class="form-control" id="release">
+                </div>
+                <div class="form-group">
+                  <label for="usr">Type:</label>
+                  <input type="text" class="form-control" id="type">
+                </div>
+                <div class="form-group">
+                  <label for="usr">Provider:</label>
+                  <input type="text" class="form-control" id="provider">
+                </div>        
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="savebutton">Save</button>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/js/app.js"></script>
-    <!-- Setting <script> tag at the end for better performance -->
-    <script type="text/javascript">
-      // alert('Alert pop-up');
-      
-      // String declarations
-      var tmp = 'value';
-      var foo = 'bar'; // string
-      foo = "bar";
-      foo = `bar ${tmp}`;
-      // foo = foo + ' ' + tmp;
-      console.log('foo string', foo);
-      
-      // var instance = new String('value');
-      // console.log('Instance string', instance.valueOf(), instance);
-
-      // Number declarations
-      foo = 12; // number
-      console.log('foo number', foo);
-
-      // Boolean declarations
-      foo = true; // boolean
-      console.log('foo boolean', foo);
-    </script>
-    <!-- Operators -->
-    <script type="text/javascript">
-      if (true) {
-        var counter = 0;
-      }
-      
-      // counter = counter + 1;
-      // counter++;
-      counter += 1;
-      console.log('Counter - increment', counter);
-
-      var operand1 = '12';
-      var operand2 = 12;
-      console.log(`Compare ${operand1} and ${operand2}`, operand1 == operand2, operand1 === operand2);
-
-      var logicOperand1 = true;
-      var logicOperand2 = true;
-
-      console.log("Logic AND", logicOperand1 && logicOperand2);
-
-      logicOperand1 = true;
-      logicOperand2 = false;
-
-      const result = logicOperand1 || logicOperand2;
-
-      console.log("Logic OR", result);
-      console.log("Not the OR result", !result);
-
-      var condition = 'true';
-      // var boolResult = null;
-
-      // if (condition) {
-      //   boolResult = true;
-      // } else {
-      //   boolResult = false;
-      // }
-      const boolResult = condition ? true : false;
-      console.log('Value of boolResult: ', boolResult);
-    </script>
-    <!-- Switch -->
-    <script type="text/javascript">
-      const name = 'three';
-      let numericValue = null;
-
-      switch(name) {
-        case 'one':
-          numericValue = 1;
-          break;
-        case 'two':
-          numericValue = 2;
-          break;
-        default:
-          numericValue = 999999999;
-      }
-      console.log('The numeric value is', numericValue);
-    </script>
-    <!-- Loops -->
-    <script type="text/javascript">
-      // const range = prompt('Give range limit');
-      // let matchValue = null;
-      // console.log('Numbers from 1 to 10:');
-      // // FOR
-      // for (var i = 1; i < range; i++) {
-      //   if (i === 7) {
-      //     matchValue = 7;
-      //     break;
-      //   }
-
-      //   if (i === 3 || i === 4) {
-      //     continue;
-      //   }
-
-      //   console.log(`==> ${i}`);
-      // }
-
-      // alert(`Found matched value ${matchValue}`);
-      
-      // WHILE
-      // var i = 1;
-      // while(i < range) {
-      //   console.log(`==> ${i}`);
-      //   i++;
-      // }
-
-    </script>
-    <!-- Functions -->
-    <script type="text/javascript">
-      function doFoo() {
-        alert('Alert from function');
-      }
-
-      const doAdd = function(operand1, operand2) {
-        return operand1 + operand2;
-      }
-
-      // doFoo();
-      const adding = doAdd(1, 2);
-      console.log('Add result', adding);
-    </script>
   </body>
+
 </html>

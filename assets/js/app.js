@@ -10,18 +10,19 @@
           <td>${film.release}</td>
           <td>${film.type}</td>
           <td>${film.provider}</td>
-          <td><i class="fas fa-edit font-color"></i> <i class="fas fa-link font-color"></i></td>
+          <td><i class="fas fa-edit font-color"></i>  <a href="#" class="deleteRow"><i class="fas fa-link font-color"></i></a></td>
         </tr>
       `;
       trs.push(htmlString);
     });
-  
-    tableBody.innerHTML = trs.join('');
+    console.log(tableBody)
+    tableBody.html(trs.join(''));
   }
 
   function init() {
-    const addButton = document.getElementById('addTitleButton');
-    const tableBody = document.getElementById('tableBody');
+    const addButton = $( "#savebutton" );
+    const tableBody = $( "#tableBody" );
+    const deleteRow = $( "#deleteRow" );
 
     const data = [
       {
@@ -70,12 +71,48 @@
     // Once loaded the table will be populated
     createTableContent(data, tableBody);
 
-    addButton.onclick = function(event) {
-      alert('Add button clicked');
+    $(tableBody).on('click', deleteRow, function(){
+      event.preventDefault();
+      deleteRow.parent().parent().remove();
+       console.log(deleteRow.parent().parent())
+    });
+
+    addButton.click(function( event ) {
+      event.preventDefault();
+      const id = $( "#ID" ).val();
+      const name = $("#name").val();
+      const release = $("#release").val();
+      const type = $("#type").val();
+      const provider = $("#provider").val();
+      const data ={
+        id: id,
+        name: name,
+        release: release,
+        type: type,
+      provider: provider
     }
+    const htmlString = `
+        <tr class="body">
+          <td>${data.id}</td>
+          <td>${data.name}</td>
+          <td>${data.release}</td>
+          <td>${data.type}</td>
+          <td>${data.provider}</td>
+          <td><i class="fas fa-edit font-color"></i> <a href="#" class="deleteRow"><i class="fas fa-link font-color"></i></a></td>
+        </tr>
+      `;
+    $('#tableBody tr:last').after(htmlString);
+    $( "#ID" ).val("");
+    $("#name").val("");
+    $("#release").val("");
+    $("#type").val("");
+    $("#provider").val("");
+    });
   }
 
   window.onload = function(event) {
     init();
   }
 }());
+
+
