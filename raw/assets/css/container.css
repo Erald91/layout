@@ -4,8 +4,7 @@ body {
 .custom-container {      
   height: 100vh;
   background: #1b1e24;
-  display: flex;  
-        
+  display: flex;       
 }
 
 .main {
