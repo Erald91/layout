@@ -1,0 +1,37 @@
+.second-div {
+  flex: 1;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.second-div .table {
+  color:#ffffff;
+  width: 100%;
+  border-bottom: 1px solid #999fa8;
+  border-spacing: 0px;
+  text-align: center;
+}
+
+.second-div .table .header {
+  background-color: #2b3441;
+  font-family: 'Roboto', sans-serif;       
+}
+
+.second-div .table .header th {
+  padding:10px;        
+}
+
+.second-div .table .body td {
+  border-top: 1px solid #999fa8;
+  padding: 10px;
+}
+
+.second-div .table .body td.custom-actions > i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.second-div .table th {
+  border-bottom: 1px solid #999fa8;
+}
+                

@@ -1,30 +1,147 @@
 import React, {Component} from "react";
+import Modal from 'react-modal';
+
+import './styles.css';
 
 class AddMovies extends Component {
-    render (){
-        return(
-          <div id="myModal" className="modal fade" role="dialog">
-            <div className="modal-dialog">
-            <div className="modal-content">
-            <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal">&times;</button>
-                <h4 className="modal-title">Add Movies</h4>
-            </div>
-            <div className="modal-body">
-                <input type="text" name="ID" value="" />
-                <input type="text" name="Name" value="" />
-                <input type="text" name="Release" value="" />
-                <input type="text" name="Type" value="" />
-                <input type="text" name="Provider" value="" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-
-  </div>
-</div>
-        );
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isOpen !== prevState.isOpen) {
+      return {isOpen: nextProps.isOpen};
+    } else {
+      return null;
     }
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      id: '',
+      name: '',
+      release: '',
+      type: '',
+      provider: ''
+    }
+
+    this.onClose = this.onClose.bind(this);
+    this.manageSave = this.manageSave.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({isOpen: this.props.isOpen});
+  }
+
+  onClose() {
+    this.props.onClose();
+  }
+
+  uppdateId(value) {
+    this.setState({id: value});
+  }
+
+  uppdateName(value) {
+    this.setState({name: value});
+  }
+
+  uppdateRelease(value) {
+    this.setState({release: value});
+  }
+
+  uppdateType(value) {
+    this.setState({type: value});
+  }
+
+  uppdateProvider(value) {
+    this.setState({provider: value});
+  }
+
+  manageSave() {
+    const {
+      id,
+      name,
+      release,
+      type,
+      provider
+    } = this.state;
+
+    if (!id) {
+      alert('ID not defined!!!');
+      return;
+    }
+
+    if (!name) {
+      alert('Name not defined!!!');
+      return;
+    }
+
+    if (!release) {
+      alert('Release not defined!!!');
+      return;
+    }
+
+    if (!type) {
+      alert('Type not defined!!!');
+      return;
+    }
+
+    if (!provider) {
+      alert('Provider not defined!!!');
+      return;
+    }
+    const data = { id, name, release, type, provider };
+    console.log('Created data', data);
+    this.props.saveNewFilm(data);
+  }
+
+  render() {
+    return (
+      <Modal isOpen={this.state.isOpen}>
+        <div className="modal-content">
+          <div className="modal-content_header">
+            <div className="modal-content_header_title">Add Movie</div>
+            <div className="modal-content_header_close">
+              <i class="fas fa-trash-alt" onClick={this.onClose}></i>
+            </div>
+          </div>
+          <div className="modal-content_content">
+            <div className="control">
+              <div className="modal-content_content_label">ID</div>
+              <div className="modal-content_header_input">
+                <input value={this.state.id} placeholder="ID" onChange={(e) => this.uppdateId(e.target.value)} />
+              </div>
+            </div>
+            <div className="control">
+              <div className="modal-content_content_label">Name</div>
+              <div className="modal-content_header_input">
+                <input value={this.state.name} placeholder="Name" onChange={(e) => this.uppdateName(e.target.value)} />
+              </div>
+            </div>
+            <div className="control">
+              <div className="modal-content_content_label">Release</div>
+              <div className="modal-content_header_input">
+                <input value={this.state.release} placeholder="Release" onChange={(e) => this.uppdateRelease(e.target.value)} />
+              </div>
+            </div>
+            <div className="control">
+              <div className="modal-content_content_label">Type</div>
+              <div className="modal-content_header_input">
+                <input value={this.state.type} placeholder="Type" onChange={(e) => this.uppdateType(e.target.value)} />
+              </div>
+            </div>
+            <div className="control">
+              <div className="modal-content_content_label">Provider</div>
+              <div className="modal-content_header_input">
+                <input value={this.state.provider} placeholder="Provider" onChange={(e) => this.uppdateProvider(e.target.value)} />
+              </div>
+            </div>
+          </div>
+          <div className="modal-content_actions">
+            <button onClick={this.manageSave}>Save</button>
+          </div>
+        </div>
+      </Modal>
+    )
+  }
 }
 export default AddMovies;

@@ -1,10 +1,15 @@
 import React, {Component} from "react";
 import './styles.css';
-import AddMovies from '../AddMovies/index';
 
 class FirstDiv extends Component {
   constructor(props) {
-      super(props);
+    super(props);
+
+    this.managAddonclick = this.managAddonclick.bind(this);
+  }
+
+  managAddonclick() {
+    this.props.onAddClick();
   }
 
   render() {
@@ -17,7 +22,7 @@ class FirstDiv extends Component {
           </div>
         </div>
         <div className="FirstDiv_actions-container">
-          <button class="add-button" id="addTitleButton" data-target="#myModal">ADD TITLE</button>
+          <button class="add-button" id="addTitleButton" data-target="#myModal" onClick={this.managAddonclick}>ADD TITLE</button>
         </div>
       </div>
     );
