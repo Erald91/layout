@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div class="custom-container">
+      <div className="custom-container">
         <Sidebar />
         <Main />
       </div>

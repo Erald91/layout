@@ -1,0 +1,16 @@
+.second-div {
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
+            }
+.table {
+    color: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid #999fa8;
+    border-spacing: 0px;
+    text-align: center;
+       } 
+.header {
+    background-color: #2b3441;
+    font-family: 'Roboto', sans-serif;
+        }
