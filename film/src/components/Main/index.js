@@ -37,6 +37,7 @@ class Main extends Component {
     this.manageAddMovideModalOnOpen = this.manageAddMovideModalOnOpen.bind(this);
     this.manageFilmOnEdit = this.manageFilmOnEdit.bind(this);
     this.onFilmAdded = this.onFilmAdded.bind(this);
+    this.manageDeleteMovie = this.manageDeleteMovie.bind(this);
   }
 
   manageAddMovideModalOnClose() {
@@ -54,14 +55,18 @@ class Main extends Component {
   onFilmAdded(film) {
     const data = [...this.state.data];
     data.push(film);
-    this.setState({ data });
+    this.setState({ data , isAddMovieOpen: false });
+  }
+  manageDeleteMovie(id) {
+  let newData = this.state.data.filter(movie => movie.id !== id);
+  this.setState({data: newData});
   }
 
   render() {
     return (
       <div className="main">
         <FirstDiv onAddClick={this.manageAddMovideModalOnOpen} />
-        <Table data={this.state.data} onFilmEditClick={this.manageFilmOnEdit} />
+        <Table data={this.state.data} onFilmDeleteClick={this.manageDeleteMovie} onFilmEditClick={this.manageFilmOnEdit} />
         <AddMovies isOpen={this.state.isAddMovieOpen} onClose={this.manageAddMovideModalOnClose} saveNewFilm={this.onFilmAdded} />
       </div>
     );

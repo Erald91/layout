@@ -6,10 +6,14 @@ class Table extends PureComponent {
     super(props);
 
     this.managFilmOnEdit = this.managFilmOnEdit.bind(this);
+    this.manageOnDelete = this.manageOnDelete.bind(this);
   }
 
   managFilmOnEdit(film) {
     this.props.onFilmEditClick(film);
+  }
+  manageOnDelete(id) {
+    this.props.onFilmDeleteClick(id);
   }
 
   getBody() {
@@ -22,7 +26,7 @@ class Table extends PureComponent {
           <td>{film.type}</td>
           <td>{film.provider}</td>
           <td class="custom-actions">
-            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-trash-alt" onClick={(e) => this.manageOnDelete(film.id)}></i>
             <i class="fas fa-edit" onClick={(e) => this.managFilmOnEdit(film)}></i>
           </td>
         </tr>
