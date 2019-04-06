@@ -55,25 +55,24 @@ class Main extends Component {
   }
 
   onFilmAdded(film) {
-    const data = [...this.state.data];
-    data.push(film);
-    this.setState({ data , isAddMovieOpen: false });
+    this.init();
+    this.setState({isAddMovieOpen: false});
   }
 
   manageDeleteMovie(id) {
-    let newData = this.state.data.filter(movie => movie.id !== id);
-    this.setState({data: newData});
+    FetchService.deleteFilm(id)
+      .then((response) => response.json())
+      .then((data) => {
+        this.init();
+      })
+      .catch((error) => {
+        
+        alert(error.msg);
+      });
   }
 
   onFilmEdit(film) {
-    let newData = [...this.state.data];
-    newData = newData.map((element) => {
-      if (element.id === film.id) {
-        element = film;
-      }
-      return element;
-    });
-    this.setState({data: newData});
+    this.init();
     this.manageAddMovideModalOnClose();
   }
 

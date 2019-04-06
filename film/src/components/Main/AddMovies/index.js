@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Modal from 'react-modal';
+import {FetchService} from '../../../services/FetchService';
 
 import './styles.css';
 
@@ -135,9 +136,23 @@ class AddMovies extends Component {
     }
     const data = { id, name, release, type, provider };
     if (this.isEditingMode()) {
-      this.props.editFilm(data);
+      FetchService.editFilm(data)
+        .then((response) => response.json())
+        .then((data) => {
+          this.props.editFilm();
+        })
+        .catch((error) => {
+          alert(error.msg);
+        });
     } else {
-      this.props.saveNewFilm(data);
+      FetchService.createFilm(data)
+        .then((response) => response.json())
+        .then((data) => {
+          this.props.saveNewFilm();
+        })
+        .catch((error) => {
+          alert(error.msg);
+        });
     }
   }
 
