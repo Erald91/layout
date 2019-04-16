@@ -1,0 +1,25 @@
+#list {
+    border: 1px grey solid;
+    border-radius: 3px;
+    background-color: rgb(0, 102, 255);
+    height: 35px;
+    width: 130px;
+}
+#edit {
+    border: 1px black solid;
+    border-radius: 3px;
+    background-color: rgb(135, 135, 231);
+    height: 35px;
+    width: 130px;
+}
+.firstDiv {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+th {
+    border: 1px grey solid;
+    padding: 10px;
+}
+.head {
+    background-color: rgb(0, 102, 255);
+}
