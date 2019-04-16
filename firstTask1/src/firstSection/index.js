@@ -73,9 +73,7 @@ class FirstSection extends Component {
                 </thead>
                 <tbody>
                     {data}
-                </tbody>
-            
-            
+                </tbody>            
             </table>
             <ViewModal 
                 isOpen = {this.state.isOpen}

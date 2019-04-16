@@ -1,0 +1,26 @@
+.navbar-container {
+  padding: 0px 10px;
+  border: 1.5px solid #959595;
+  border-radius: 6px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-container_item > a {
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.navbar-container_item > a.selected {
+  background-color: rgb(0, 134, 255);
+  color: rgb(255, 255, 255);
+}
+
+.navbar-container_item > a:hover {
+  text-decoration: none;
+  background-color: #eee;
+  color: #23527c;
+}
